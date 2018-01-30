@@ -1,0 +1,40 @@
+{
+  "name": "advocado",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "react": "^16.2.0",
+    "react-dom": "^16.2.0",
+    "react-scripts-ts": "2.13.0"
+  },
+  "scripts": {
+    "start": "react-scripts-ts start",
+    "build": "react-scripts-ts build",
+    "test": "react-scripts-ts test --env=jsdom",
+    "coverage": "react-scripts-ts test --env=jsdom --coverage",
+    "eject": "react-scripts-ts eject",
+    "serve": "lite-server --baseDir=build"
+  },
+  "devDependencies": {
+    "@types/enzyme": "^3.1.8",
+    "@types/enzyme-adapter-react-16": "^1.0.1",
+    "@types/jest": "^22.1.0",
+    "@types/node": "^9.4.0",
+    "@types/react": "^16.0.35",
+    "@types/react-dom": "^16.0.3",
+    "@types/react-test-renderer": "^16.0.0",
+    "enzyme": "^3.3.0",
+    "enzyme-adapter-react-16": "^1.1.1",
+    "lite-server": "^2.3.0",
+    "react-test-renderer": "^16.2.0",
+    "typescript": "^2.6.2"
+  },
+  "jest": {
+    "collectCoverageFrom": [
+      "!src/registerServiceWorker.*",
+      "src/*.{ts,tsx}",
+      "!**/node_modules/**",
+      "!src/index.*"
+    ]
+  }
+}
