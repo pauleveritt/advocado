@@ -31,8 +31,11 @@ export const Header: React.StatelessComponent<HeaderProps> = (props) => {
     return (
         <Navbar style={{backgroundColor: '#00D1B2', margin: '0'}}>
             <NavbarBrand>
-                <NavbarItem>
-                    <img src={logo} style={{marginRight: 15, marginLeft: 15}}/> Bloomer
+                <NavbarItem href="#/">
+                    <img
+                        src={logo}
+                        style={{marginRight: 15, marginLeft: 15}}
+                    /> Advocado
                 </NavbarItem>
                 <NavbarItem isHidden="desktop">
                     <Icon className="fa fa-github"/>
@@ -45,6 +48,7 @@ export const Header: React.StatelessComponent<HeaderProps> = (props) => {
             <NavbarMenu isActive={active} onClick={onClickNav}>
                 <NavbarStart>
                     <NavbarItem href="#/">Home</NavbarItem>
+                    <NavbarItem href="#/employees">Employees</NavbarItem>
                     <NavbarItem hasDropdown={true} isHoverable={true}>
                         <NavbarLink href="#/documentation">Documentation</NavbarLink>
                         <NavbarDropdown>

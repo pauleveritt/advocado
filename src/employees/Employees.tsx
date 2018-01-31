@@ -1,5 +1,7 @@
 import * as React from 'react';
 
+import { Title } from 'bloomer';
+
 const employeesUrl = 'http://localhost:3010/employees';
 
 interface Employee {
@@ -29,7 +31,6 @@ class Employees extends React.Component<any, EmployeesState> {
                 return results.json();
             })
             .then(data => {
-                console.log(data);
                 this.setState({
                     employees: data
                 });
@@ -38,11 +39,18 @@ class Employees extends React.Component<any, EmployeesState> {
 
     public render() {
 
-        return this.state.employees.map((employee: any) => (
-            <div key={employee.id}>
-                {employee.first_name} {employee.last_name}
+        return (
+            <div>
+                <Title>Employees</Title>
+                <ul>
+                    {
+                        this.state.employees.map((employee: Employee) => (
+                            <li key={employee.id}>{employee.first_name}</li>
+                        ))
+                    }
+                </ul>
             </div>
-        ));
+        );
     }
 }
 

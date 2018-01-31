@@ -8,7 +8,7 @@ import { Header } from '@App/Header';
 class App extends React.Component {
     render() {
         return (
-            <Container isFluid={true} style={{marginTop: 10}}>
+            <Container isFluid={true} isMarginless={true}>
                 <Header color="success"/>
                 <Main/>
             </Container>
