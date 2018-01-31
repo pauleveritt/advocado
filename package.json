@@ -13,7 +13,8 @@
     "test": "react-scripts-ts test --env=jsdom",
     "coverage": "react-scripts-ts test --env=jsdom --coverage",
     "eject": "react-scripts-ts eject",
-    "serve": "lite-server --baseDir=build"
+    "serve": "lite-server --baseDir=build",
+    "rest": "json-server --port 3010 --watch db.json"
   },
   "devDependencies": {
     "@types/enzyme": "^3.1.8",
@@ -25,6 +26,7 @@
     "@types/react-test-renderer": "^16.0.0",
     "enzyme": "^3.3.0",
     "enzyme-adapter-react-16": "^1.1.1",
+    "json-server": "^0.12.1",
     "lite-server": "^2.3.0",
     "react-test-renderer": "^16.2.0",
     "typescript": "^2.6.2"
