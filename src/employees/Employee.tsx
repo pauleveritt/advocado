@@ -1,12 +1,6 @@
 import * as React from 'react';
+import { EmployeeModel } from '@App/employees/models';
 
-export interface EmployeeModel {
-    id: number;
-    first_name: string;
-    last_name: string;
-    email: string;
-
-}
 
 interface EmployeeProps {
     model: EmployeeModel;

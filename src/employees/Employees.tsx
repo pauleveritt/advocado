@@ -2,7 +2,8 @@ import * as React from 'react';
 
 import { Title } from 'bloomer';
 
-import { EmployeeModel, Employee } from '@App/employees/Employee';
+import { Employee } from '@App/employees/Employee';
+import { EmployeeModel } from '@App/employees/models';
 
 const employeesUrl = 'http://localhost:3010/employees';
 
@@ -10,7 +11,7 @@ interface EmployeesState {
     employees: Array<EmployeeModel>;
 }
 
-class Employees extends React.Component<any, EmployeesState> {
+class Employees extends React.Component<{}, EmployeesState> {
 
     constructor(props: any) {
         super(props);
