@@ -2,18 +2,12 @@ import * as React from 'react';
 
 import { Title } from 'bloomer';
 
+import { EmployeeModel, Employee } from '@App/employees/Employee';
+
 const employeesUrl = 'http://localhost:3010/employees';
 
-interface Employee {
-    id: number;
-    first_name: string;
-    last_name: string;
-    email: string;
-
-}
-
 interface EmployeesState {
-    employees: Array<Employee>;
+    employees: Array<EmployeeModel>;
 }
 
 class Employees extends React.Component<any, EmployeesState> {
@@ -44,9 +38,11 @@ class Employees extends React.Component<any, EmployeesState> {
                 <Title>Employees</Title>
                 <ul>
                     {
-                        this.state.employees.map((employee: Employee) => (
-                            <li key={employee.id}>{employee.first_name}</li>
-                        ))
+                        this.state.employees.map(
+                            (employee: EmployeeModel) => (
+                                <Employee key={employee.id} model={employee}/>
+                            )
+                        )
                     }
                 </ul>
             </div>
