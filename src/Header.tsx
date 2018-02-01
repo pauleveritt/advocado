@@ -3,7 +3,6 @@ import {
     Icon,
     Navbar,
     NavbarBrand,
-    NavbarBurger,
     NavbarDivider,
     NavbarDropdown,
     NavbarEnd,
@@ -15,6 +14,7 @@ import {
 
 import { Bulma } from 'bloomer/lib/bulma';
 import Colors = Bulma.Colors;
+import { NavLink } from 'react-router-dom';
 
 const logo = require('./advocado_logo.png');
 
@@ -31,26 +31,25 @@ export const Header: React.StatelessComponent<HeaderProps> = (props) => {
     return (
         <Navbar style={{backgroundColor: '#00D1B2', margin: '0'}}>
             <NavbarBrand>
-                <NavbarItem href="#/">
-                    <img
-                        src={logo}
-                        style={{marginRight: 15, marginLeft: 15}}
-                    /> Advocado
+                <NavbarItem>
+                    <NavLink to={'/'}>
+                        <img
+                            src={logo}
+                            style={{marginRight: 15, marginLeft: 15}}
+                        />
+                    </NavLink>
+                    <NavLink to={'/'}>
+                        <div>Advocado</div>
+                    </NavLink>
                 </NavbarItem>
-                <NavbarItem isHidden="desktop">
-                    <Icon className="fa fa-github"/>
-                </NavbarItem>
-                <NavbarItem isHidden="desktop">
-                    <Icon className="fa fa-twitter" style={{color: '#55acee'}}/>
-                </NavbarItem>
-                <NavbarBurger isActive={active} onClick={onClickNav}/>
             </NavbarBrand>
             <NavbarMenu isActive={active} onClick={onClickNav}>
                 <NavbarStart>
-                    <NavbarItem href="#/">Home</NavbarItem>
-                    <NavbarItem href="#/employees">Employees</NavbarItem>
+                    <NavbarItem>
+                        <NavLink to={'/employees'}>Employees</NavLink>
+                    </NavbarItem>
                     <NavbarItem hasDropdown={true} isHoverable={true}>
-                        <NavbarLink href="#/documentation">Documentation</NavbarLink>
+                        <NavbarLink href="/documentation">Documentation</NavbarLink>
                         <NavbarDropdown>
                             <NavbarItem href="#/">One A</NavbarItem>
                             <NavbarItem href="#/">Two B</NavbarItem>
