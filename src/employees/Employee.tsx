@@ -1,7 +1,6 @@
 import * as React from 'react';
 import { EmployeeModel } from '@App/employees/models';
 
-
 interface EmployeeProps {
     model: EmployeeModel;
 }
