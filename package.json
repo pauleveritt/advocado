@@ -13,13 +13,12 @@
     "react-scripts-ts": "2.13.0"
   },
   "scripts": {
-    "start": "react-scripts-ts start",
+    "dev": "react-scripts-ts start",
     "build": "react-scripts-ts build",
     "test": "react-scripts-ts test --env=jsdom",
     "coverage": "react-scripts-ts test --env=jsdom --coverage",
     "eject": "react-scripts-ts eject",
-    "serve": "lite-server --baseDir=build",
-    "rest": "json-server --port 3010 --watch db.json"
+    "start": "json-server --port $PORT db.json"
   },
   "devDependencies": {
     "@types/enzyme": "^3.1.8",
