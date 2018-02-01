@@ -18,7 +18,7 @@
     "test": "react-scripts-ts test --env=jsdom",
     "coverage": "react-scripts-ts test --env=jsdom --coverage",
     "eject": "react-scripts-ts eject",
-    "start": "json-server --port $PORT db.json"
+    "start": "node server.js"
   },
   "devDependencies": {
     "@types/enzyme": "^3.1.8",
