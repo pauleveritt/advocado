@@ -1,1 +1,8 @@
-{ "root": "build/" }
+{
+  "root": "build/",
+  "proxies": {
+    "/api/": {
+      "origin": "https://getadvocado.herokuapp.com:8090/"
+    }
+  }
+}
