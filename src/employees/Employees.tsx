@@ -5,7 +5,7 @@ import { Title } from 'bloomer';
 import { Employee } from '@App/employees/Employee';
 import { EmployeeModel } from '@App/employees/models';
 
-const employeesUrl = 'http://localhost:3010/employees';
+const employeesUrl = 'https://my-json-server.typicode.com/pauleveritt/advocado/employees';
 
 interface EmployeesState {
     employees: Array<EmployeeModel>;
@@ -37,6 +37,13 @@ class Employees extends React.Component<{}, EmployeesState> {
         return (
             <div>
                 <Title>Employees</Title>
+                <p>
+                    <div className="notification is-danger">
+                        This uses a public REST API server
+                        at <a href={employeesUrl} style={{paddingRight: 5}}>{employeesUrl}</a>
+                        for testing REST calls.
+                    </div>
+                </p>
                 <ul>
                     {
                         this.state.employees.map(
