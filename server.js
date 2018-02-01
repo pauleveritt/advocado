@@ -2,8 +2,7 @@ const jsonServer = require('json-server');
 const server = jsonServer.create();
 const router = jsonServer.router('db.json');
 const middlewares = jsonServer.defaults();
-console.log('\n\n################\nPORT', process.env.PORT)
-const port = process.env.PORT || 3010;
+const port = 8090;
 
 server.use(middlewares);
 server.use(router);
