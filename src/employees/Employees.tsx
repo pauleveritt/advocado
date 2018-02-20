@@ -5,51 +5,31 @@ import { Title } from 'bloomer';
 
 import { Employee } from './Employee';
 import { EmployeeModel } from './models';
-import { CounterStore } from '../store';
-
-const employeesUrl = 'https://my-json-server.typicode.com/pauleveritt/advocado/employees';
+import { AdvocadoStore } from '../store';
 
 interface EmployeesProps {
-    counterStore: CounterStore;
+    store: AdvocadoStore;
 }
 
-interface EmployeesState {
-    employees: Array<EmployeeModel>;
-}
-
-@inject('counterStore')
+@inject('store')
 @observer
-class Employees extends React.Component<EmployeesProps, EmployeesState> {
-
-    constructor(props: any) {
-        super(props);
-        this.state = {
-            employees: []
-        };
-    }
+class Employees extends React.Component<EmployeesProps, {}> {
 
     componentDidMount() {
-        fetch(employeesUrl)
-            .then(results => {
-                return results.json();
-            })
-            .then(data => {
-                this.setState({
-                    employees: data
-                });
-            });
+        this.props.store.employees.load();
     }
 
     public render() {
 
-        const cs = this.props.counterStore;
+        const cs = this.props.store.counter;
+        const employees = this.props.store.employees;
 
         return (
             <div>
                 <Title>Employees</Title>
                 <div className="notification is-danger">
                     This uses a public REST API server
-                    at <a href={employeesUrl} style={{ paddingRight: 5 }}>{employeesUrl}</a>
+                    at <a href={employees.employeesUrl} style={{ paddingRight: 5 }}>{employees.employeesUrl}</a>
                     for testing REST calls.
                 </div>
                 <div>Click count: {cs.clickedCount}</div>
@@ -58,7 +38,7 @@ class Employees extends React.Component<EmployeesProps, EmployeesState> {
                 </div>
                 <ul>
                     {
-                        this.state.employees.map(
+                        employees.data.map(
                             (employee: EmployeeModel) => (
                                 <Employee key={employee.id} model={employee}/>
                             )

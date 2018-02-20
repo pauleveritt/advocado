@@ -13,7 +13,7 @@ import store from './store';
 class App extends React.Component {
     render() {
         return (
-            <Provider counterStore={store}>
+            <Provider store={store}>
                 <BrowserRouter>
                     <Container isFluid={true} isMarginless={true}>
                         <Header color="success"/>
