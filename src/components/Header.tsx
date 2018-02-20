@@ -13,8 +13,8 @@ import {
 } from 'bloomer';
 
 import { Bulma } from 'bloomer/lib/bulma';
-import Colors = Bulma.Colors;
 import { NavLink } from 'react-router-dom';
+import Colors = Bulma.Colors;
 
 const logo = require('./advocado_logo.png');
 
@@ -22,20 +22,20 @@ interface HeaderProps {
     color: Colors;
 }
 
-export const Header: React.StatelessComponent<HeaderProps> = (props) => {
+const Header: React.StatelessComponent<HeaderProps> = (props) => {
     const active = false;
 
     const onClickNav = () => {
         return props;
     };
     return (
-        <Navbar style={{backgroundColor: '#00D1B2', margin: '0'}}>
+        <Navbar style={{ backgroundColor: '#00D1B2', margin: '0' }}>
             <NavbarBrand>
                 <NavbarItem>
                     <NavLink to={'/'}>
                         <img
                             src={logo}
-                            style={{marginRight: 15, marginLeft: 15}}
+                            style={{ marginRight: 15, marginLeft: 15 }}
                         />
                     </NavLink>
                     <NavLink to={'/'}>
@@ -58,15 +58,17 @@ export const Header: React.StatelessComponent<HeaderProps> = (props) => {
                         </NavbarDropdown>
                     </NavbarItem>
                 </NavbarStart>
-                <NavbarEnd style={{marginRight: 15}}>
+                <NavbarEnd style={{ marginRight: 15 }}>
                     <NavbarItem href="https://github.com/AlgusDark/bloomer" isHidden="touch">
                         <Icon className="fa fa-github"/>
                     </NavbarItem>
                     <NavbarItem href="https://twitter.com/AlgusDark" isHidden="touch">
-                        <Icon className="fa fa-twitter" style={{color: '#55acee'}}/>
+                        <Icon className="fa fa-twitter" style={{ color: '#55acee' }}/>
                     </NavbarItem>
                 </NavbarEnd>
             </NavbarMenu>
         </Navbar>
     );
 };
+
+export default Header;

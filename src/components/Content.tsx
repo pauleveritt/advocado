@@ -3,19 +3,20 @@ import { Switch, Route, RouteComponentProps } from 'react-router-dom';
 
 import { Box } from 'bloomer';
 
-import { Home } from './Home';
-import Employees from './employees/Employees';
+import Home from './Home';
+import Employees from '../employees/Employees';
 
-interface TOwnProps extends RouteComponentProps<{}> {
+interface RouteProps extends RouteComponentProps<{}> {
 }
 
-const NoMatch = (props: TOwnProps) => (
+const NoMatch = (props: RouteProps) => (
     <div>
         <h3>No match for <code>{props.location.pathname}</code></h3>
     </div>
 );
 
-class Main extends React.Component {
+class Content
+    extends React.Component {
     render() {
         return (
             <Box>
@@ -36,4 +37,4 @@ class Main extends React.Component {
     }
 }
 
-export default Main;
+export default Content;
