@@ -3,8 +3,8 @@ import { Switch, Route, RouteComponentProps } from 'react-router-dom';
 
 import { Box } from 'bloomer';
 
-import { Home } from '@App/Home';
-import Employees from '@App/employees/Employees';
+import { Home } from './Home';
+import Employees from './employees/Employees';
 
 interface TOwnProps extends RouteComponentProps<{}> {
 }

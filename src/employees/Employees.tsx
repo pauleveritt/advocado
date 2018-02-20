@@ -2,8 +2,8 @@ import * as React from 'react';
 
 import { Title } from 'bloomer';
 
-import { Employee } from '@App/employees/Employee';
-import { EmployeeModel } from '@App/employees/models';
+import { Employee } from './Employee';
+import { EmployeeModel } from './models';
 
 const employeesUrl = 'https://my-json-server.typicode.com/pauleveritt/advocado/employees';
 

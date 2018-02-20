@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { EmployeeModel } from '@App/employees/models';
+import { EmployeeModel } from './models';
 
 interface EmployeeProps {
     model: EmployeeModel;

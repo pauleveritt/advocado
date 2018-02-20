@@ -2,8 +2,8 @@ import * as React from 'react';
 
 import { Container } from 'bloomer';
 
-import Main from '@App/Main';
-import { Header } from '@App/Header';
+import Main from './Main';
+import { Header } from './Header';
 
 class App extends React.Component {
     render() {
