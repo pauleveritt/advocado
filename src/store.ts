@@ -1,6 +1,6 @@
 import { action, observable } from 'mobx';
 
-class HelloData {
+export class CounterStore {
     @observable clickedCount = 1;
 
     @action
@@ -9,6 +9,6 @@ class HelloData {
     }
 }
 
-const store = new HelloData();
+const store = new CounterStore();
 
 export default store;

@@ -1,16 +1,16 @@
 import * as React from 'react';
+import { observer, inject } from 'mobx-react';
 
 import { Title } from 'bloomer';
 
 import { Employee } from './Employee';
 import { EmployeeModel } from './models';
-
-import { observer, inject } from 'mobx-react';
+import { CounterStore } from '../store';
 
 const employeesUrl = 'https://my-json-server.typicode.com/pauleveritt/advocado/employees';
 
 interface EmployeesProps {
-    counterStore: any;
+    counterStore: CounterStore;
 }
 
 interface EmployeesState {
