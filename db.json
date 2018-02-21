@@ -18,5 +18,14 @@
       "last_name": "Smith",
       "email": "ann@codingthesmartway.com"
     }
+  ],
+  "conferences": [
+    {
+      "id": 1,
+      "title": "KotlinConf",
+      "startDate": "2018-01-01",
+      "endDate": "2018-01-03",
+      "city": "Amsterdam"
+    }
   ]
 }
